@@ -1,0 +1,64 @@
+{
+  "subscribe": "https://example.com/xhs-hongbao.json",
+  "name": "小红书-购物红包自动领取",
+  "version": 1,
+  "rule": [
+    {
+      "name": "小红书-购物红包-立即领取",
+      "priority": 1000,
+      "action": {
+        "autoClick": true,
+        "back": false
+      },
+      "match": [
+        {
+          "text": "立即领取",
+          "packageName": "com.xingin.xhs"
+        }
+      ]
+    },
+    {
+      "name": "小红书-购物红包-拆红包",
+      "priority": 999,
+      "action": {
+        "autoClick": true,
+        "back": false
+      },
+      "match": [
+        {
+          "text": "拆红包",
+          "packageName": "com.xingin.xhs"
+        }
+      ]
+    },
+    {
+      "name": "小红书-购物红包-开",
+      "priority": 998,
+      "action": {
+        "autoClick": true,
+        "back": false
+      },
+      "match": [
+        {
+          "text": "开",
+          "textMatches": "^开$",
+          "packageName": "com.xingin.xhs"
+        }
+      ]
+    },
+    {
+      "name": "小红书-购物红包-领取红包",
+      "priority": 997,
+      "action": {
+        "autoClick": true,
+        "back": false
+      },
+      "match": [
+        {
+          "text": "领取红包",
+          "packageName": "com.xingin.xhs"
+        }
+      ]
+    }
+  ]
+}
