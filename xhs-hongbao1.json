@@ -1,62 +1,79 @@
 {
-  "subscribe": "https://example.com/xhs-hongbao.json",
+  "id": 888888,
   "name": "小红书-购物红包自动领取",
   "version": 1,
-  "rule": [
+  "author": "zcode",
+  "categories": [
+    { "key": 0, "name": "购物红包", "enable": true }
+  ],
+  "globalGroups": [],
+  "appGroups": [
     {
-      "name": "小红书-购物红包-立即领取",
-      "priority": 1000,
-      "action": {
-        "autoClick": true,
-        "back": false
-      },
-      "match": [
+      "key": 0,
+      "name": "小红书-购物红包",
+      "desc": "自动点击小红书购物红包弹窗中的立即领取、拆红包等按钮",
+      "order": 100,
+      "fastQuery": true,
+      "matchTime": 10000,
+      "actionMaximum": 10,
+      "resetMatch": "app",
+      "forcedTime": 10000,
+      "actionCdKey": 0,
+      "actionMaximumKey": 0,
+      "priorityTime": 10000,
+      "disableIfAppGroupMatch": "",
+      "rules": [
         {
-          "text": "立即领取",
-          "packageName": "com.xingin.xhs"
-        }
-      ]
-    },
-    {
-      "name": "小红书-购物红包-拆红包",
-      "priority": 999,
-      "action": {
-        "autoClick": true,
-        "back": false
-      },
-      "match": [
+          "key": 0,
+          "priority": 1000,
+          "action": {
+            "autoClick": true,
+            "back": false
+          },
+          "anyMatches": [
+            "[text=\"立即领取\"][packageName=\"com.xingin.xhs\"]"
+          ],
+          "excludeMatches": "",
+          "snapshotUrls": []
+        },
         {
-          "text": "拆红包",
-          "packageName": "com.xingin.xhs"
-        }
-      ]
-    },
-    {
-      "name": "小红书-购物红包-开",
-      "priority": 998,
-      "action": {
-        "autoClick": true,
-        "back": false
-      },
-      "match": [
+          "key": 1,
+          "priority": 999,
+          "action": {
+            "autoClick": true,
+            "back": false
+          },
+          "anyMatches": [
+            "[text=\"拆红包\"][packageName=\"com.xingin.xhs\"]"
+          ],
+          "excludeMatches": "",
+          "snapshotUrls": []
+        },
         {
-          "text": "开",
-          "textMatches": "^开$",
-          "packageName": "com.xingin.xhs"
-        }
-      ]
-    },
-    {
-      "name": "小红书-购物红包-领取红包",
-      "priority": 997,
-      "action": {
-        "autoClick": true,
-        "back": false
-      },
-      "match": [
+          "key": 2,
+          "priority": 998,
+          "action": {
+            "autoClick": true,
+            "back": false
+          },
+          "anyMatches": [
+            "[text=\"开\"][text.length=1][packageName=\"com.xingin.xhs\"]"
+          ],
+          "excludeMatches": "",
+          "snapshotUrls": []
+        },
         {
-          "text": "领取红包",
-          "packageName": "com.xingin.xhs"
+          "key": 3,
+          "priority": 997,
+          "action": {
+            "autoClick": true,
+            "back": false
+          },
+          "anyMatches": [
+            "[text=\"领取红包\"][packageName=\"com.xingin.xhs\"]"
+          ],
+          "excludeMatches": "",
+          "snapshotUrls": []
         }
       ]
     }
