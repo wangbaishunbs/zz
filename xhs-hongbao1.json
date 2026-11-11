@@ -1,7 +1,7 @@
 {
   "id": 888888,
   "name": "小红书-购物红包自动领取",
-  "version": 2,
+  "version": 3,
   "author": "zcode",
   "apps": [
     {
@@ -36,6 +36,41 @@
               "key": 3,
               "name": "领取红包",
               "matches": "[text=\"领取红包\"]"
+            }
+          ]
+        },
+        {
+          "key": 1,
+          "name": "群聊红包",
+          "desc": "自动点击群聊中的红包卡片及开启弹窗按钮",
+          "matchTime": 10000,
+          "actionMaximum": 20,
+          "resetMatch": "app",
+          "quickFind": true,
+          "rules": [
+            {
+              "key": 0,
+              "name": "红包卡片-领取红包",
+              "matches": "[text*=\"领取红包\"]",
+              "action": "clickCenter"
+            },
+            {
+              "key": 1,
+              "name": "红包卡片-点击领取",
+              "matches": "[text=\"点击领取\"]",
+              "action": "clickCenter"
+            },
+            {
+              "key": 2,
+              "name": "开启按钮-desc开",
+              "matches": "[desc=\"开\"]",
+              "action": "clickCenter"
+            },
+            {
+              "key": 3,
+              "name": "红包卡片-desc红包",
+              "matches": "[desc=\"红包\"]",
+              "action": "clickCenter"
             }
           ]
         }
