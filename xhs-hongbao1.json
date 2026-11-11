@@ -1,81 +1,46 @@
 {
   "id": 888888,
   "name": "小红书-购物红包自动领取",
-  "version": 1,
+  "version": 2,
   "author": "zcode",
-  "categories": [
-    { "key": 0, "name": "购物红包", "enable": true }
-  ],
-  "globalGroups": [],
-  "appGroups": [
+  "apps": [
     {
-      "key": 0,
-      "name": "小红书-购物红包",
-      "desc": "自动点击小红书购物红包弹窗中的立即领取、拆红包等按钮",
-      "order": 100,
-      "fastQuery": true,
-      "matchTime": 10000,
-      "actionMaximum": 10,
-      "resetMatch": "app",
-      "forcedTime": 10000,
-      "actionCdKey": 0,
-      "actionMaximumKey": 0,
-      "priorityTime": 10000,
-      "disableIfAppGroupMatch": "",
-      "rules": [
+      "id": "com.xingin.xhs",
+      "name": "小红书",
+      "groups": [
         {
           "key": 0,
-          "priority": 1000,
-          "action": {
-            "autoClick": true,
-            "back": false
-          },
-          "anyMatches": [
-            "[text=\"立即领取\"][packageName=\"com.xingin.xhs\"]"
-          ],
-          "excludeMatches": "",
-          "snapshotUrls": []
-        },
-        {
-          "key": 1,
-          "priority": 999,
-          "action": {
-            "autoClick": true,
-            "back": false
-          },
-          "anyMatches": [
-            "[text=\"拆红包\"][packageName=\"com.xingin.xhs\"]"
-          ],
-          "excludeMatches": "",
-          "snapshotUrls": []
-        },
-        {
-          "key": 2,
-          "priority": 998,
-          "action": {
-            "autoClick": true,
-            "back": false
-          },
-          "anyMatches": [
-            "[text=\"开\"][text.length=1][packageName=\"com.xingin.xhs\"]"
-          ],
-          "excludeMatches": "",
-          "snapshotUrls": []
-        },
-        {
-          "key": 3,
-          "priority": 997,
-          "action": {
-            "autoClick": true,
-            "back": false
-          },
-          "anyMatches": [
-            "[text=\"领取红包\"][packageName=\"com.xingin.xhs\"]"
-          ],
-          "excludeMatches": "",
-          "snapshotUrls": []
+          "name": "购物红包自动领取",
+          "desc": "自动点击购物红包弹窗中的立即领取/拆红包/领取红包按钮",
+          "matchTime": 10000,
+          "actionMaximum": 20,
+          "resetMatch": "app",
+          "quickFind": true,
+          "rules": [
+            {
+              "key": 0,
+              "name": "立即领取",
+              "matches": "[text=\"立即领取\"]"
+            },
+            {
+              "key": 1,
+              "name": "拆红包",
+              "matches": "[text=\"拆红包\"]"
+            },
+            {
+              "key": 2,
+              "name": "开",
+              "matches": "[text=\"开\"]"
+            },
+            {
+              "key": 3,
+              "name": "领取红包",
+              "matches": "[text=\"领取红包\"]"
+            }
+          ]
         }
       ]
     }
-  ]
+  ],
+  "globalGroups": []
 }
